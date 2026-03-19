@@ -13,8 +13,8 @@ async def main() -> None:
     while True:
         try:
             user_input = input(">> ")
-            user_input = user_input.encode('utf-8', errors='ignore').decode('utf-8')
-        except (EOFError, KeyboardInterrupt):
+            user_input = user_input.encode("utf-8", errors="ignore").decode("utf-8")
+        except EOFError, KeyboardInterrupt:
             print()
             break
         if not user_input.strip():
@@ -23,6 +23,7 @@ async def main() -> None:
         result: RunResult = await Runner.run(agent, input=user_input, session=session)
         if result.final_output:
             print(result.final_output)
+
 
 if __name__ == "__main__":
     asyncio.run(main())

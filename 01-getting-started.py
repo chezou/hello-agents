@@ -13,6 +13,7 @@ def run_man_command(command: str) -> str:
         return f"No manual entry for '{command}'."
     return result.stdout.decode("utf-8", errors="replace")
 
+
 INSTRUCTIONS = """
 あなたはLinuxコマンドラインインターフェースの専門家です。Linuxコマンドの使い方を教えることができます。
 ユーザーからLinuxコマンドの使い方について質問されたら、`run_man_command`ツールを使ってmanページを参照し、適切な回答を提供してください。
@@ -25,6 +26,7 @@ INSTRUCTIONS = """
 - ツールの用途外のことを聞かれた場合は答えないでください。
 """
 
+
 async def main() -> None:
     agent = Agent(
         name="LinuxCommandHelper",
@@ -33,6 +35,7 @@ async def main() -> None:
         tools=[run_man_command],
     )
     await run_demo_loop(agent, stream=True)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
