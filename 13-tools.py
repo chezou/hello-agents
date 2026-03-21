@@ -61,7 +61,12 @@ async def main():
         "こんにちは！ヴィンランド・サガの世界へようこそ。どのキャラクターと話したいですか？（トールズ、トルフィン、トルケル）\n>> "
     )
     agent = orchestrator_agent
-    inputs: list[TResponseInputItem] = [{"content": msg.encode("utf-8", errors="ignore").decode("utf-8"), "role": "user"}]
+    inputs: list[TResponseInputItem] = [
+        {
+            "content": msg.encode("utf-8", errors="ignore").decode("utf-8"),
+            "role": "user",
+        }
+    ]
 
     while True:
         with trace("Agent as tools", group_id=conversation_id):
