@@ -1,6 +1,6 @@
 # hello-agents
 
-Hands-on exercises following @mocobeta's [Agents SDK+α Tips Advent Calendar 2025](https://adventar.org/calendars/12523).
+Hands-on exercises following [@mocobeta](https://github.com/mocobeta)'s [Agents SDK+α Tips Advent Calendar 2025](https://adventar.org/calendars/12523).
 
 ## What's this?
 
